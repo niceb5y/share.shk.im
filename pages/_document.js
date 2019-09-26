@@ -14,7 +14,6 @@ class MyDocument extends Document {
         <Head>
           <link rel="stylesheet" href="https://cdn.shk.im/webcore/v19.css" />
           <script src="https://cdn.shk.im/webcore/v19.js"></script>
-          <title>Share</title>
         </Head>
         <body>
           <div className="container">
