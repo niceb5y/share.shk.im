@@ -1,0 +1,6 @@
+share-shk-im:
+  component: serverless-next.js
+  inputs:
+    domain: ['share', 'shk.im']
+    bucketName: 'share-shk-im'
+    build: true
