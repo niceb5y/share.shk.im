@@ -12,8 +12,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="stylesheet" href="https://cdn.shk.im/webcore/v19.css" />
-          <script src="https://cdn.shk.im/webcore/v19.js"></script>
+          <link rel="stylesheet" href="https://cdn.shk.im/webcore/v20.css" />
+          <script src="https://cdn.shk.im/webcore/v20.js"></script>
         </Head>
         <body>
           <div className="container">
