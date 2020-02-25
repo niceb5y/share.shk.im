@@ -44,7 +44,8 @@ class Download extends Component {
           <p className="lead pt-3 text-muted">
             {DateTime.fromSeconds(this.props.date)
               .setLocale('ko')
-              .toLocaleString(DateTime.DATETIME_SHORT)}
+              .toLocaleString(DateTime.DATETIME_SHORT)}{' '}
+            · {this.props.size}
           </p>
           <p className="text-muted">SHA256: {this.props.hash}</p>
           <a
