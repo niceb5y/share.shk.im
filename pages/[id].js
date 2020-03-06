@@ -10,7 +10,7 @@ class Download extends Component {
   static async getInitialProps({ query }) {
     const { id } = query
     let fetchError = false
-    const data = await fetch(`https://api.shk.im/share/${id}`)
+    const data = await fetch(`https://share.shk.im/api/${id}`)
       .then(res => res.json())
       .catch(err => {
         fetchError = true
