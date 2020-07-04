@@ -1,5 +1,5 @@
 share-shk-im:
-  component: serverless-next.js
+  component: serverless-next.js@1.14.0
   inputs:
     policy: 'arn:aws:iam::118730338351:policy/shk-share-policy'
     domain: ['share', 'shk.im']
