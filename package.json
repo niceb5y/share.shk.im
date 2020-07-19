@@ -11,7 +11,7 @@
     "deploy": "sls"
   },
   "dependencies": {
-    "aws-sdk": "^2.711.0",
+    "aws-sdk": "^2.715.0",
     "isomorphic-unfetch": "^3.0.0",
     "luxon": "^1.24.1",
     "next": "^9.4.4",
@@ -20,8 +20,8 @@
   },
   "devDependencies": {
     "@types/luxon": "^1.24.1",
-    "@types/react": "^16.9.41",
+    "@types/react": "^16.9.43",
     "serverless-next.js": "1.14.0",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   }
 }
