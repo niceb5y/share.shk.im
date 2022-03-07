@@ -3,13 +3,17 @@ import * as DynamoDB from 'aws-sdk/clients/dynamodb'
 import { NextApiResponse, NextApiRequest } from 'next'
 
 AWS.config.update({
+  credentials: {
+    accessKeyId: process.env.AWS_KEY,
+    secretAccessKey: process.env.AWS_SECRET
+  },
   region: 'ap-northeast-2'
 })
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const docClient = new DynamoDB.DocumentClient()
 
-  var params = {
+  const params = {
     TableName: 'shk-share',
     Key: {
       id: req.query.id
@@ -18,17 +22,17 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   try {
     const result = await docClient.get(params).promise()
-    res.statusCode = 200
-    res.setHeader('Content-Type', 'application/json')
-    res.end(
-      JSON.stringify({
-        id: result.Item['id'],
-        filename: result.Item['filename'],
-        hash: result.Item['hash'],
-        date: result.Item['date'],
-        size: result.Item['size']
-      })
-    )
+    if (result.Item) {
+      res.statusCode = 200
+      res.setHeader('Content-Type', 'application/json')
+      res.end(
+        JSON.stringify(result.Item)
+      )
+    } else {
+      res.statusCode = 404
+      res.setHeader('Content-Type', 'text/plain')
+      res.end('Not Found')
+    }
   } catch (err) {
     console.error(err)
     res.statusCode = 404
@@ -36,3 +40,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.end('Not Found')
   }
 }
+
+export default handler
